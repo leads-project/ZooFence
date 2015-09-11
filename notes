@@ -1,0 +1,5 @@
+- inherit from Zookeeper to ease benchmarking
+- factorize the command execution code ?
+- i do not understand what you do not return simply the stat returned
+  by the last Zk instance contacted during the execution of a sub-command.
+- return (Stat) cmd.execute(zks.get(0)) ?
