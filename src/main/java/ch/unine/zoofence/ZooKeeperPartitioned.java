@@ -1,4 +1,4 @@
-package ch.unine.zkpartitioned;
+package ch.unine.zoofence;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.ACL;
@@ -20,7 +20,7 @@ public class ZooKeeperPartitioned extends ZooKeeper{
 	/* unique client id */
 	public static String clientId;
 	
-	/* log4j throughout the zkpartitioned code */
+	/* log4j throughout the zoofence code */
 	final static Logger logger = LoggerFactory.getLogger(ZooKeeperPartitioned.class);
 	
 	/* increasing number that uniquely identifies a command; initialized to 0 in constructor */

@@ -1,6 +1,5 @@
-package ch.unine.zkpartitioned.tests;
+package ch.unine.zoofence;
 
-import ch.unine.zkpartitioned.ZooKeeperPartitioned;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.data.Stat;
@@ -12,7 +11,7 @@ import java.util.List;
 public class LatencyTest {
 
 	public static void main(String[] args) throws IOException {
-		
+
 		if (args.length < 1) {
 			System.err.println("Arg expected: \n" +
 					"* zkp (to test latency for zookeeper partitioned) \n" +
@@ -44,20 +43,10 @@ public class LatencyTest {
 			long zkpTime = 0;
 			
 			List<String> connectStrings = new ArrayList<String>();
-			/*connectStrings.add("192.168.79.101:2181");
-			connectStrings.add("192.168.79.102:2181");
-			connectStrings.add("192.168.79.103:2181");
-			connectStrings.add("192.168.79.105:2181");*/
-			
 			connectStrings.add("127.0.0.1:2181");
             connectStrings.add("127.0.0.1:2182");
-//			connectStrings.add("127.0.0.1:12102");
-//			connectStrings.add("127.0.0.1:12103");
-//			connectStrings.add("127.0.0.1:12104");
-
 
             ZooKeeperPartitioned zkp = new ZooKeeperPartitioned("localhost:2181|localhost:2182",60000, watcher);
-			// ZooKeeperPartitioned zkp = new ZooKeeperPartitioned(connectStrings,60000, watcher);
 			zkp.setLeader(true);
 			
             // create

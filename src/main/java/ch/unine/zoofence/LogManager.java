@@ -1,4 +1,4 @@
-package ch.unine.zkpartitioned;
+package ch.unine.zoofence;
 
 import java.util.HashMap;
 import java.util.Map;

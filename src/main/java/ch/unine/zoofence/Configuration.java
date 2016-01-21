@@ -1,4 +1,4 @@
-package ch.unine.zkpartitioned;
+package ch.unine.zoofence;
 
 import java.io.BufferedReader;
 import java.io.IOException;

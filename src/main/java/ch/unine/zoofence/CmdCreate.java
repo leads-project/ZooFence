@@ -1,11 +1,11 @@
-package ch.unine.zkpartitioned;
-
-import java.util.List;
+package ch.unine.zoofence;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
+
+import java.util.List;
 
 public class CmdCreate extends Command {
 	

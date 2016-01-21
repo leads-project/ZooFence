@@ -1,6 +1,6 @@
-package ch.unine.zkpartitioned;
+package ch.unine.zoofence;
 
-import ch.unine.zkpartitioned.Command.CmdType;
+import ch.unine.zoofence.Command.CmdType;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;

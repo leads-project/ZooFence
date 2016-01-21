@@ -1,18 +1,11 @@
-package ch.unine.zkpartitioned.tests;
+package ch.unine.zoofence;
+
+import org.apache.zookeeper.*;
+import org.apache.zookeeper.ZooDefs.Ids;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
-
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooDefs.Ids;
-import org.apache.zookeeper.ZooKeeper;
-
-import ch.unine.zkpartitioned.ZooKeeperPartitioned;
 
 public class ThroughputTest {
 	public static Integer msgs;
@@ -54,17 +47,9 @@ public class ThroughputTest {
 		
     	if (zktype.equals("zkp")) {
     		List<String> connectStrings = new ArrayList<String>();
-    		connectStrings.add("192.168.79.101:2181");
-    		connectStrings.add("192.168.79.102:2181");
-    		connectStrings.add("192.168.79.103:2181");
-    		connectStrings.add("192.168.79.104:2181");
-    		/*
-    		connectStrings.add("127.0.0.1:12101");
-    		connectStrings.add("127.0.0.1:12102");
-    		connectStrings.add("127.0.0.1:12103");
-    		connectStrings.add("127.0.0.1:12104");
-    		*/
-    		
+			connectStrings.add("127.0.0.1:2181");
+			connectStrings.add("127.0.0.1:2182");
+
     		ZooKeeperPartitioned zkp = new ZooKeeperPartitioned(connectStrings, 1000, watcher);
     		if (role.equals("leader"))
     			zkp.setLeader(true);

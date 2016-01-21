@@ -1,4 +1,4 @@
-package ch.unine.zkpartitioned;
+package ch.unine.zoofence;
 import org.apache.zookeeper.data.Stat;
 
 public class Data {
