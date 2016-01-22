@@ -9,6 +9,7 @@ This tutorial has been tested on `Ubuntu 12.04`.
 * JDK >= 7
 * Maven >= 3.x
 * ZooKeeper 3.4.6
+* Menagerie 1.2-SNAPSHOT (git clone https://github.com/otrack/menagerie.git && cd menagerie && mvn install -DskipTests)
 
 # How to run the code #
 We recommend that you set up a new project from existing sources in your favourite IDE (e.g., [Eclipse](http://stackoverflow.com/questions/2636201/how-to-create-a-project-from-existing-source-in-eclipse-and-then-find-it)).
