@@ -13,6 +13,6 @@ RUN mvn clean install -DskipTests
 WORKDIR /
 RUN git clone https://github.com/leads-project/ZooFence.git
 WORKDIR /ZooFence
-#RUN mvn test -Dtest=SimpleTest
-RUN mvn test -Dtest=DockerTest
+ENTRYPOINT ["mvn", "test", "-Dtest=DockerTest"]
+
 
