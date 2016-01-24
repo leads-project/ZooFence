@@ -18,7 +18,7 @@ We recommend that you set up a new project from existing sources in your favouri
 `resources/zkpartitioned.config` contains a sample configuration file.
 
 The required configuration parameters are:
-* `ZOOKEEPERS`: should contain `IP:PORT` pairs for different ZooKeeper instancess; each ZooKeeper instance represents a ZooFence partition.
+* `ZOOKEEPERS`: should contain `IP:PORT` pairs for different ZooKeeper instances; each ZooKeeper instance represents a ZooFence partition.
 * `ZKADMIN`: should contain an `IP:PORT` pair corresponding to the administrative ZooKeeper deployment, which is in charge of storing command queues.
 * `FLATTENING_FACTOR`: controls when flattening operations are performed.
 * `REDUCTION_FACTOR`: controls how many partitions to remove during a flattening operation.
