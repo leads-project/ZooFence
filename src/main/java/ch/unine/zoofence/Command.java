@@ -24,35 +24,35 @@ public abstract class Command implements Serializable {
 	public abstract Object execute(ZooKeeper zk) throws KeeperException, InterruptedException;
 
 	public String getPath() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Command.getPath");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Command.getPath");
 		
 		return path;
 	}
 
 	public CmdType getType() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Command.getType");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Command.getType");
 		
 		return type;
 	}
 	
 	public String getId() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Command.getId");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Command.getId");
 		
 		return id;
 	}
 
     public String getRootPath(){
-        if (ZooKeeperPartitioned.logger.isTraceEnabled())
-            ZooKeeperPartitioned.logger.trace("Command.getRootPath");
+        if (ZooFence.logger.isTraceEnabled())
+            ZooFence.logger.trace("Command.getRootPath");
         return "/" + path.split("/")[1];
     }
 	
 	public String getParentPath() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Command.getParentPath");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Command.getParentPath");
 		
 		String parentPath = "";
 		
@@ -68,8 +68,8 @@ public abstract class Command implements Serializable {
 	}
 	
 	public int getPathLength() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Command.getPathLength");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Command.getPathLength");
 		
 		String[] pathTokens = path.split("/");
 		return (pathTokens.length - 1);

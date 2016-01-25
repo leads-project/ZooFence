@@ -33,8 +33,8 @@ public class Log {
     }
 	
 	public Object add(LogEntry logEntry) throws KeeperException, InterruptedException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("[" + logNode + "] " + ZooKeeperPartitioned.clientId + " execute cmd " + logEntry.getCmd().getId());
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("[" + logNode + "] " + ZooFence.clientId + " execute cmd " + logEntry.getCmd().getId());
 
         String clientId = logEntry.getClientId();
         if(!output.containsKey(clientId))
@@ -68,8 +68,8 @@ public class Log {
 	}
 	
 	public void updateEntry(LogEntry logEntry) throws KeeperException, InterruptedException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("[" + logNode + "] " + ZooKeeperPartitioned.clientId + " recorded result for cmd " + logEntry.getCmd().getId());
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("[" + logNode + "] " + ZooFence.clientId + " recorded result for cmd " + logEntry.getCmd().getId());
 
         String clientId = logEntry.getClientId();
         if(!output.containsKey(clientId))

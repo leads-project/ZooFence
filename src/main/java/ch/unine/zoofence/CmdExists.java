@@ -25,8 +25,8 @@ public class CmdExists extends Command {
 	
 	@Override
 	public Object execute(ZooKeeper zk) throws KeeperException, InterruptedException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Exists.execute");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Exists.execute");
 		
 		Stat stat = null;
 		if (watcherType.equals("Watcher")) {

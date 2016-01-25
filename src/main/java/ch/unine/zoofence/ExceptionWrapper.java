@@ -31,8 +31,8 @@ public class ExceptionWrapper {
 	}
 
 	public void throwException() throws KeeperException, InterruptedException, IllegalArgumentException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("ExceptionWrapper.throwException");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("ExceptionWrapper.throwException");
 		
 		switch(type) {
 		case KeeperException:

@@ -46,7 +46,7 @@ public class LatencyTest {
 			connectStrings.add("127.0.0.1:2181");
             connectStrings.add("127.0.0.1:2182");
 
-            ZooKeeperPartitioned zkp = new ZooKeeperPartitioned("localhost:2181|localhost:2182",60000, watcher);
+            ZooFence zkp = new ZooFence("localhost:2181|localhost:2182",60000, watcher);
 			zkp.setLeader(true);
 			
             // create

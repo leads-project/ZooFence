@@ -40,8 +40,8 @@ public class CmdCreate extends Command {
 	
 	@Override
 	public Object execute(ZooKeeper zk) throws KeeperException, InterruptedException, IllegalArgumentException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-		 ZooKeeperPartitioned.logger.trace("CmdCreate.execute");
+		if (ZooFence.logger.isTraceEnabled())
+		 ZooFence.logger.trace("CmdCreate.execute");
 		
 		CreateMode cMode = null;
 		switch(createMode) {

@@ -26,8 +26,8 @@ public class LogExecutor extends Thread {
 	
 	@Override
 	public void run() {		
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("LogExecutor.run");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("LogExecutor.run");
 
 		while (true) {
 
@@ -42,7 +42,7 @@ public class LogExecutor extends Thread {
 
             if (keySync != null) { // a reference to the parent's log exists
 
-                Log logSync = ZooKeeperPartitioned.logManager.getLog(keySync);
+                Log logSync = ZooFence.logManager.getLog(keySync);
                 logEntry.setLogSync(null);
                 try {
                     result = logSync.add(logEntry);

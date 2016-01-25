@@ -27,8 +27,8 @@ public class CmdGetChildren extends Command {
 	
 	@Override
 	public Object execute(ZooKeeper zk) throws KeeperException, InterruptedException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("GetChildren.execute");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("GetChildren.execute");
 
 		List<String> children = new ArrayList<String>();
 		if (watcherType == "Watcher") {

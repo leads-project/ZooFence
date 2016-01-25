@@ -18,10 +18,10 @@ public class DockerTest {
         };
 
         List<String> connectStrings = new ArrayList<String>();
-        connectStrings.add("zookeeper0:2181");
-        connectStrings.add("zookeeper1:2182");
+        connectStrings.add("127.0.0.1:2181");
+        connectStrings.add("127.0.0.1:2182");
 
-        ZooKeeperPartitioned zkp = new ZooKeeperPartitioned(connectStrings, 1000, watcher);
+        ZooFence zkp = new ZooFence(connectStrings, 1000, watcher);
 
         try {
             zkp.create("/node0", new byte[0], ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);

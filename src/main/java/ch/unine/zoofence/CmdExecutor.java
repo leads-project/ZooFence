@@ -18,8 +18,8 @@ public class CmdExecutor extends Thread {
 
 	@Override
 	public void run() {	
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdExecutor.run");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdExecutor.run");
 		
 		Object result = null;
 		

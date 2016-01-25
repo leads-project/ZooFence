@@ -20,8 +20,8 @@ public class MappingFunction {
 	
 	// builds list of zks
 	public void computePartitions(String path, List<ZooKeeper> zks) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("MappingFunction.computePartitions");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("MappingFunction.computePartitions");
 
 		String[] pathTokens = path.split("/");
 		int pathTokensLen = pathTokens.length - 1;
@@ -49,8 +49,8 @@ public class MappingFunction {
 	}
 
     public List<ZooKeeper> getZks(String key) {
-        if (ZooKeeperPartitioned.logger.isTraceEnabled())
-            ZooKeeperPartitioned.logger.trace("MappingFunction.getZks");
+        if (ZooFence.logger.isTraceEnabled())
+            ZooFence.logger.trace("MappingFunction.getZks");
 
         List<ZooKeeper> zks = new ArrayList<ZooKeeper>();
         for (char ch : key.toCharArray()) {
@@ -129,8 +129,8 @@ public class MappingFunction {
 
     // builds log key
     private String computeKey(List<ZooKeeper> zks) {
-        if (ZooKeeperPartitioned.logger.isTraceEnabled())
-            ZooKeeperPartitioned.logger.trace("MappingFunction.computeKey");
+        if (ZooFence.logger.isTraceEnabled())
+            ZooFence.logger.trace("MappingFunction.computeKey");
 
         List<Integer> keys = new ArrayList<Integer>();
         String logKey = "";
@@ -143,8 +143,8 @@ public class MappingFunction {
     }
 
     private void regularMap(Command cmd, List<ZooKeeper> zks, List<String> logKeys) {
-        if (ZooKeeperPartitioned.logger.isTraceEnabled())
-            ZooKeeperPartitioned.logger.trace("MappingFunction.map");
+        if (ZooFence.logger.isTraceEnabled())
+            ZooFence.logger.trace("MappingFunction.map");
 
         // generate partitions
         List<ZooKeeper> zksClone = new ArrayList<ZooKeeper>(zookeepers);

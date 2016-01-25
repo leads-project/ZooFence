@@ -50,7 +50,7 @@ public class ThroughputTest {
 			connectStrings.add("127.0.0.1:2181");
 			connectStrings.add("127.0.0.1:2182");
 
-    		ZooKeeperPartitioned zkp = new ZooKeeperPartitioned(connectStrings, 1000, watcher);
+    		ZooFence zkp = new ZooFence(connectStrings, 1000, watcher);
     		if (role.equals("leader"))
     			zkp.setLeader(true);
     		

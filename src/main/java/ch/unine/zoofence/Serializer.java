@@ -16,8 +16,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
     }
 
 	public static List<byte[]> serializeACL(List<ACL> acl) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.serializeACL");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.serializeACL");
 		
 		List<byte[]> aclSerialized = null;
 		
@@ -45,8 +45,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 	
 	public static List<ACL> deserializeACL(List<byte[]> aclSerialized) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.deserializeACL");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.deserializeACL");
 		
 		List<ACL> acl = null;
 		
@@ -74,8 +74,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 
 	public static byte[] serializeStat(Stat stat) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.serializeStat");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.serializeStat");
 		
 		byte[] statSerialized = null;
 		
@@ -99,8 +99,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 	
 	public static Stat deserializeStat(byte[] statSerialized) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.deserializeStat");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.deserializeStat");
 		
 		Stat stat = new Stat();
 		
@@ -122,8 +122,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 	
 	public byte[] serialize(T obj) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.serialize");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.serialize");
 		
 		byte[] serializedCmd = null;
 		
@@ -142,8 +142,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 	
 	public T deserialize(byte[] bytes) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.deserialize");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.deserialize");
 		
 		T logEntry = null;
 		
@@ -161,8 +161,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 	
 	public static byte[] serializeData(Data result) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.serializeData");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.serializeData");
 		
 		byte[] data = result.getData();
 		byte[] dataSize = ByteBuffer.allocate(4).putInt(data.length).array();
@@ -187,8 +187,8 @@ public class Serializer<T> implements org.menagerie.Serializer<T>{
 	}
 	
 	public static Data deserializeData(byte[] dataSerialized) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("Serializer.deserializeData");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("Serializer.deserializeData");
 		
 		ByteArrayInputStream inputStream = new ByteArrayInputStream(dataSerialized);
 			  

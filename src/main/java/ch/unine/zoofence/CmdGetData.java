@@ -29,8 +29,8 @@ public class CmdGetData extends Command {
 	// return the data and the stat of the node of the given path
 	@Override
 	public Object execute(ZooKeeper zk) throws KeeperException, InterruptedException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("GetData.execute");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("GetData.execute");
 		
 		Stat stat = Serializer.deserializeStat(statSerialized);
 		
@@ -47,8 +47,8 @@ public class CmdGetData extends Command {
 	}
 	
 	public Stat getStat() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdGetData.getStat");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdGetData.getStat");
 			 
 		return Serializer.deserializeStat(statSerialized);
 	}

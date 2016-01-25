@@ -17,8 +17,8 @@ public class CmdSetData extends Command {
 	}
 	
 	public Object execute(ZooKeeper zk) throws KeeperException, InterruptedException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdSetData.execute");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdSetData.execute");
 		
 		Stat stat = zk.setData(path, data, version);
 		
@@ -29,29 +29,29 @@ public class CmdSetData extends Command {
 	}
 
 	public byte[] getData() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdSetData.getData");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdSetData.getData");
 		
 		return data;
 	}
 
 	public void setData(byte[] data) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdSetData.setData");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdSetData.setData");
 		
 		this.data = data;
 	}
 
 	public int getVersion() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("SetData.getVersion");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("SetData.getVersion");
 		
 		return version;
 	}
 
 	public void setVersion(int version) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("SetData.setVersion");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("SetData.setVersion");
 		
 		this.version = version;
 	}

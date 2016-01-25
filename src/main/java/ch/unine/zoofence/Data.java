@@ -11,29 +11,29 @@ public class Data {
 		}
 
 		public byte[] getData() {
-			if (ZooKeeperPartitioned.logger.isTraceEnabled())
-				 ZooKeeperPartitioned.logger.trace("Data.getData");
+			if (ZooFence.logger.isTraceEnabled())
+				 ZooFence.logger.trace("Data.getData");
 			
 			return data;
 		}
 
 		public void setData(byte[] data) {
-			if (ZooKeeperPartitioned.logger.isTraceEnabled())
-				 ZooKeeperPartitioned.logger.trace("Data.setData");
+			if (ZooFence.logger.isTraceEnabled())
+				 ZooFence.logger.trace("Data.setData");
 			
 			this.data = data;
 		}
 
 		public Stat getStat() {
-			if (ZooKeeperPartitioned.logger.isTraceEnabled())
-				 ZooKeeperPartitioned.logger.trace("Data.getStat");
+			if (ZooFence.logger.isTraceEnabled())
+				 ZooFence.logger.trace("Data.getStat");
 			
 			return stat;
 		}
 
 		public void setStat(Stat stat) {
-			if (ZooKeeperPartitioned.logger.isTraceEnabled())
-				 ZooKeeperPartitioned.logger.trace("Data.setStat");
+			if (ZooFence.logger.isTraceEnabled())
+				 ZooFence.logger.trace("Data.setStat");
 			
 			this.stat = stat;
 		}

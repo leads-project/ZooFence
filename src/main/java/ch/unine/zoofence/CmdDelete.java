@@ -15,8 +15,8 @@ public class CmdDelete extends Command {
 	
 	@Override
 	public Object execute(ZooKeeper zk) throws InterruptedException, KeeperException {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdDelete.execute");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdDelete.execute");
 		
 		zk.delete(path, version);
 
@@ -24,15 +24,15 @@ public class CmdDelete extends Command {
 	}
 
 	public int getVersion() {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdDelete.getVersion");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdDelete.getVersion");
 		
 		return version;
 	}
 
 	public void setVersion(int version) {
-		if (ZooKeeperPartitioned.logger.isTraceEnabled())
-			 ZooKeeperPartitioned.logger.trace("CmdDelete.setVersion");
+		if (ZooFence.logger.isTraceEnabled())
+			 ZooFence.logger.trace("CmdDelete.setVersion");
 			 
 		this.version = version;
 	}

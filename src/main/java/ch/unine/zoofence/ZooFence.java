@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 
-public class ZooKeeperPartitioned extends ZooKeeper{
+public class ZooFence extends ZooKeeper{
 
     public static final String ZKP_SEPARATOR = "|";
 
@@ -21,7 +21,7 @@ public class ZooKeeperPartitioned extends ZooKeeper{
 	public static String clientId;
 	
 	/* log4j throughout the zoofence code */
-	final static Logger logger = LoggerFactory.getLogger(ZooKeeperPartitioned.class);
+	final static Logger logger = LoggerFactory.getLogger(ZooFence.class);
 	
 	/* increasing number that uniquely identifies a command; initialized to 0 in constructor */
 	private volatile int cmdNumber;
@@ -48,7 +48,7 @@ public class ZooKeeperPartitioned extends ZooKeeper{
      * @param watcher - same as for ZooKeeper
      * @throws IOException
      */
-    public ZooKeeperPartitioned (int sessionTimeout, Watcher watcher) throws IOException {
+    public ZooFence(int sessionTimeout, Watcher watcher) throws IOException {
         super("",0,null);
         StringTokenizer st = new StringTokenizer(Configuration.zksConnectStrings,ZKP_SEPARATOR);
         List<String> connectStrings = new ArrayList<String>();
@@ -64,7 +64,7 @@ public class ZooKeeperPartitioned extends ZooKeeper{
      * @param watcher - same as for ZooKeeper
      * @throws IOException
      */
-    public ZooKeeperPartitioned (String fullConnectString, int sessionTimeout, Watcher watcher) throws IOException {
+    public ZooFence(String fullConnectString, int sessionTimeout, Watcher watcher) throws IOException {
         super("",0,null);
         StringTokenizer st = new StringTokenizer(fullConnectString,ZKP_SEPARATOR);
         List<String> connectStrings = new ArrayList<String>();
@@ -82,7 +82,7 @@ public class ZooKeeperPartitioned extends ZooKeeper{
 	 * @param watcher - same as for ZooKeeper
 	 * @throws IOException
 	 */
-	public ZooKeeperPartitioned (List<String> connectStrings, int sessionTimeout, Watcher watcher) throws IOException {
+	public ZooFence(List<String> connectStrings, int sessionTimeout, Watcher watcher) throws IOException {
         super("",0,null);
         init(connectStrings,sessionTimeout,watcher);
 	}
