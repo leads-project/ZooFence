@@ -25,7 +25,10 @@ public class LogExecutor extends Thread {
 	}
 	
 	@Override
-	public void run() {		
+	public void run() {
+
+        Exception cmdException = null;
+
 		if (ZooFence.logger.isTraceEnabled())
 			 ZooFence.logger.trace("LogExecutor.run");
 
@@ -75,7 +78,15 @@ public class LogExecutor extends Thread {
                     }
                 }
 
-                if (results.get(0) != null && !(results.get(0) instanceof  Throwable) ) {
+                // check that none of the results is an exception
+                for (Object res : results) {
+                    if (res instanceof Exception) {
+                        cmdException = (Exception) res;
+                        break;
+                    }
+                }
+
+                if (cmdException == null) {
 
                     switch(type) {
                     case EXISTS:
@@ -176,8 +187,8 @@ public class LogExecutor extends Thread {
                         break;
                     }
 
-                } else {
-                    result = results.get(0);
+                } else { // an exception occured
+                    result = cmdException;
                 }
 
             } // keysync == null
