@@ -1,16 +1,12 @@
 package ch.unine.zoofence;
-
 import org.apache.zookeeper.*;
-import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Test(enabled = false)
-public class DockerTest {
-
-    public void dockertest() throws IOException {
+public class ZooFenceMain {
+	
+    public static void main(String[] args) throws IOException {
         Watcher watcher = new Watcher(){
             @Override
             public void process(WatchedEvent event) {

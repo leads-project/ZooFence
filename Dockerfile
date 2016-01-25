@@ -13,6 +13,7 @@ RUN mvn clean install -DskipTests
 WORKDIR /
 RUN git clone https://github.com/leads-project/ZooFence.git
 WORKDIR /ZooFence
-ENTRYPOINT ["mvn", "test", "-Dtest=DockerTest"]
+RUN mvn compile assembly:single -DskipTests
+ENTRYPOINT ["java", "-jar", "target/ZooFence-1.0-SNAPSHOT-jar-with-dependencies.jar"]
 
 
