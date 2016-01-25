@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Test
+@Test(enabled = false)
 public class DockerTest {
 
     public void dockertest() throws IOException {
@@ -18,8 +18,8 @@ public class DockerTest {
         };
 
         List<String> connectStrings = new ArrayList<String>();
-        connectStrings.add("127.0.0.1:2181");
-        connectStrings.add("127.0.0.1:2182");
+        connectStrings.add("zookeeper0:2181");
+        connectStrings.add("zookeeper1:2182");
 
         ZooFence zkp = new ZooFence(connectStrings, 1000, watcher);
 

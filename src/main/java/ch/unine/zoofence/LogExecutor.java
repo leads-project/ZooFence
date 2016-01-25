@@ -58,7 +58,7 @@ public class LogExecutor extends Thread {
                 List<ZooKeeper> zks = mappingFunc.getZks(logEntry.getLogKey());
 
                 // execute command
-                List<Object> results = new ArrayList<Object>(zks.size());
+                List<Object> results = new ArrayList<>(zks.size());
                 synchronized (results) {
                     for (ZooKeeper zk : zks) {
                         CmdExecutor cmdExecutor = new CmdExecutor(cmd, zk, results);
@@ -75,7 +75,7 @@ public class LogExecutor extends Thread {
                     }
                 }
 
-                if (results.get(0) != null && !(results.get(0) instanceof  Exception) ) {
+                if (results.get(0) != null && !(results.get(0) instanceof  Throwable) ) {
 
                     switch(type) {
                     case EXISTS:
@@ -106,10 +106,8 @@ public class LogExecutor extends Thread {
                         break;
                     case GET_CHILDREN:
                         List<String> children = new ArrayList<String>();
-
                         for (Object res : results) {
                             List<String> childenTmp = (List<String>)res;
-
                             for (String s : childenTmp) {
                                 if (children.contains(s) == false) {
                                     children.add(s);
